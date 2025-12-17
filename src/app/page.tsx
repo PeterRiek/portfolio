@@ -1,65 +1,69 @@
 import Image from "next/image";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <main className="flex h-full flex-col items-center justify-center p-8 gap-8">
+      {/* Profile Image */}
+      <div className="relative w-56 h-56 rounded-full overflow-hidden border-4 border-zinc-900 shadow-2xl">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/headshot.png"
+          alt="Peter Riek"
+          fill
+          className="object-cover"
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+
+      {/* Text Content */}
+      <div className="text-center space-y-2">
+        <h1 className="text-4xl font-bold tracking-tight text-white mb-4">
+          Peter Riek
+        </h1>
+        <p className="text-xl text-zinc-400 font-light uppercase tracking-widest">
+          CS Student @ TUM
+        </p>
+        <p className="text-xl text-zinc-400 font-light uppercase tracking-widest">
+          Cloud Transformation @ Deloitte
+        </p>
+      </div>
+
+      {/* Social Buttons */}
+      <div className="flex flex-col gap-4 mt-4 w-full max-w-sm">
+        <a
+          href="https://de.linkedin.com/in/peter-riek-764599346"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative block px-6 py-4 bg-[#0077b5] text-white transition-transform hover:scale-105 hover:bg-[#006097] border border-transparent shadow-lg shadow-[#0077b5]/20 group -skew-x-12"
+        >
+          <div className="flex items-center justify-center gap-3 skew-x-12">
+            <FaLinkedin className="text-2xl group-hover:text-white" />
+            <span className="font-medium">LinkedIn</span>
+          </div>
+        </a>
+
+        <a
+          href="https://github.com/PeterRiek"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative block px-6 py-4 bg-[#333] text-white transition-transform hover:scale-105 hover:bg-[#222] border border-zinc-700 shadow-lg shadow-white/5 group -skew-x-12"
+        >
+          <div className="flex items-center justify-center gap-3 skew-x-12">
+            <FaGithub className="text-2xl group-hover:text-white" />
+            <span className="font-medium">GitHub</span>
+          </div>
+        </a>
+
+        <a
+          href="mailto:peter@riek.me"
+          className="relative block px-6 py-4 bg-emerald-600 text-white transition-transform hover:scale-105 hover:bg-emerald-700 border border-transparent shadow-lg shadow-emerald-500/20 group -skew-x-12"
+        >
+          <div className="flex items-center justify-center gap-3 skew-x-12">
+            <FaEnvelope className="text-2xl group-hover:text-white" />
+            <span className="font-medium">Email</span>
+          </div>
+        </a>
+      </div>
+    </main>
   );
 }
